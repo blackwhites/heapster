@@ -11,6 +11,20 @@ Compute Resource Usage Analysis and Monitoring of Container Clusters
     KubeDNS is running at http://localhost:8080/api/v1/proxy/namespaces/kube-system/services/kube-dns
     ```
 
+1. git clone or download source code from https://github.com/k8sp/heapster.git 并切换目录到 heapster/deploy
+
+   ```
+   core@zodiac-01 ~/liuqs $ git clone https://github.com/k8sp/heapster.git && cd heapster/deploy
+   Cloning into 'heapster'...
+   remote: Counting objects: 59, done.
+   remote: Compressing objects: 100% (39/39), done.
+   remote: Total 59 (delta 19), reused 54 (delta 19), pack-reused 0
+   Unpacking objects: 100% (59/59), done.
+   Checking connectivity... done.
+   core@zodiac-01 ~/liuqs/heapster/deploy $ ls
+   kube-config  kube.sh
+   ```
+
 1. Start all of the pods and services
 
     ```
