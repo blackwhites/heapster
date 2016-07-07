@@ -80,6 +80,22 @@ Compute Resource Usage Analysis and Monitoring of Container Clusters
     ```
 
 1. 可以查询通过 describe services 看到 Grafana 的 NodePort 端口号，这个是在配置文件中指定，设置为32017（如果不指定 NodePort 端口，系统会随机出一个30000以后的端口）
+
+    ```
+    core@zodiac-01 ~/liuqs/heapster $ kubectl describe services monitoring-grafana --namespace=kube-system
+    Name:                   monitoring-grafana
+    Namespace:              kube-system
+    Labels:                 kubernetes.io/cluster-service=true,kubernetes.io/name=monitoring-grafana
+    Selector:               name=influxGrafana
+    Type:                   NodePort
+    IP:                     10.3.0.177
+    Port:                   <unset> 80/TCP
+    NodePort:               <unset> 32017/TCP
+    Endpoints:              10.1.9.2:3000
+    Session Affinity:       None
+    No events.
+    ```
+
 1. 通过 http://10.10.10.201:32017/ 可以访问 Grafana UI 界面， 查看和配置监控数据
 
 
